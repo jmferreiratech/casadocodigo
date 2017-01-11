@@ -29,6 +29,7 @@
         <mysql-connector-java.version>5.1.15</mysql-connector-java.version>
         <validation-api.version>1.0.0.GA</validation-api.version>
         <hibernate-validator.version>4.1.0.Final</hibernate-validator.version>
+        <jackson.version>2.5.1</jackson.version>
     </properties>
 
     <dependencies>
@@ -120,6 +121,16 @@
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-validator</artifactId>
             <version>${hibernate-validator.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${jackson.version}</version>
         </dependency>
     </dependencies>
 </project>
