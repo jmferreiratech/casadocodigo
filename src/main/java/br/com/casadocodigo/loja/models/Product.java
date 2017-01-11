@@ -10,6 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.validation.constraints.Min;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
@@ -78,6 +79,14 @@ public class Product {
 
     public String getSummaryPath() {
         return summaryPath;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public BigDecimal priceFor(BookType bookType) {
+        return prices.stream().filter(price -> price.getBookType().equals(bookType)).findFirst().get().getValue();
     }
 
     @Override
