@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 
 <!doctype html>
 <html>
@@ -113,10 +114,11 @@
                                                        value="${shoppingCart.getQuantity(item)}"></td>
                 <td class="numeric-cell">${shoppingCart.getTotal(item)}</td>
                 <td class="remove-item">
-                    <form method="post"
-                          action="${spring:mvcUrl('SCC#remove').arg(0,item.product.id).arg(1,item.bookType).build()}">
+                    <form:form method="post"
+                               action="${spring:mvcUrl('SCC#remove').arg(0,item.product.id).arg(1,item.bookType).build()}">
                         <input type="image" src="//cdn.shopify.com/s/files/1/0155/7645/t/177/assets/excluir.png?58522"
-                               alt="Excluir" title="Excluir"/></form>
+                               alt="Excluir" title="Excluir"/>
+                    </form:form>
                 </td>
             </tr>
         </c:forEach>
@@ -125,9 +127,9 @@
         <tfoot>
         <tr>
             <td colspan="2">
-                <form action="${spring:mvcUrl('PC#checkout').build()}" method="post">
+                <form:form action="${spring:mvcUrl('PC#checkout').build()}" method="post">
                     <input type="submit" class="checkout" name="checkout" value="Finalizar compra " id="checkout"/>
-                </form>
+                </form:form>
             </td>
             <td class="numeric-cell">${shoppingCart.total}</td>
             <td></td>
@@ -271,6 +273,7 @@
             _gaq.push(['_trackEvent', 'Recomendação', 'Livro', book]);
           });
         });
+
 </script>
 
 <noscript><img height="1" width="1" alt="" style="display:none"
@@ -296,6 +299,7 @@
          _gaq.push(['_trackPageview', '/LinkExterno/' + this.href]);
        });
      });
+
 </script>
 </body>
 </html>
