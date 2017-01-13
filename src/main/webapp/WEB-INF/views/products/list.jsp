@@ -10,9 +10,7 @@
 <body>
 <security:authorize access="isAuthenticated()">
     <security:authentication property="principal" var="user"/>
-    <div>
-        Olá ${user.name}
-    </div>
+        <spring:message code="users.welcome" arguments="${user.name}"/>
 </security:authorize>
 <div> ${sucesso} </div>
 <security:authorize access="hasRole('ROLE_ADMIN')">
