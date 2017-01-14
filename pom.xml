@@ -33,6 +33,7 @@
         <guava.version>18.0</guava.version>
         <spring-security.version>4.0.0.M2</spring-security.version>
         <junit.version>4.11</junit.version>
+        <javax-mail.version>1.4.7</javax-mail.version>
     </properties>
 
     <dependencies>
@@ -184,8 +185,13 @@
             <version>${spring-security.version}</version>
             <scope>test</scope>
         </dependency>
+        <!-- email -->
+        <dependency>
+            <groupId>javax.mail</groupId>
+            <artifactId>mail</artifactId>
+            <version>${javax-mail.version}</version>
+        </dependency>
     </dependencies>
-
     <repositories>
         <repository>
             <id>spring-milestones</id>
