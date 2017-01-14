@@ -21,7 +21,7 @@ public class ProductDAO {
     }
 
     public List<Product> list() {
-        return manager.createQuery("select distinct(p) from Product p join fetch p.prices",
+        return manager.createQuery("select p from Product p",
                 Product.class).getResultList();
     }
 
